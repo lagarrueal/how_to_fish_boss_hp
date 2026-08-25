@@ -13,3 +13,6 @@ dist/
 
 # Personal study plan, kept local
 docs/learning-plan.html
+
+# Raw screenshots (contain other players names from the Discord overlay)
+docs/shots/
