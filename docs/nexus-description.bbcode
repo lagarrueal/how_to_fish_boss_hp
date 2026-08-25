@@ -1,0 +1,89 @@
+[size=5][b]Boss HP Text[/b][/size]
+
+The boss health bar tells you roughly how much is left. This tells you exactly.
+
+Writes the boss's current and maximum HP straight into the bar — centred, in the game's own
+font, shaking with the bar when the boss takes a hit.
+
+[size=4][b]Features[/b][/size]
+[list]
+[*]Exact [b]current/total[/b] HP, centred inside the boss health bar
+[*]Uses the game's own font, so it looks like it shipped with the game
+[*]Moves with the bar's damage shake instead of sitting still on top of it
+[*]Outlined text, readable against both the boss and mini-boss bar colours
+[*]Configurable format, size, colour and outline
+[*]Client-side only — costs nothing, syncs nothing, breaks nothing
+[/list]
+
+[size=4][b]Why you want it[/b][/size]
+
+Boss HP scales with the number of players. A Spider Crab with 562 HP on your own has 1405 in
+a four-player lobby. The vanilla bar can't show you that, so most people never realise it's
+happening. This does.
+
+It's also the difference between "about half" and "262 left, one more harpoon".
+
+[size=4][b]Requirements[/b][/size]
+[list]
+[*][url=https://github.com/BepInEx/BepInEx/releases]BepInEx 5.4.23.x[/url] — the [b]win_x64[/b] build
+[/list]
+
+[size=4][b]Installation[/b][/size]
+
+[b]1.[/b] Install BepInEx if you haven't. Download [b]BepInEx_win_x64_5.4.23.5.zip[/b] and unzip it
+into the game folder so that [b]winhttp.dll[/b] sits next to [b]How to Fish.exe[/b].
+
+[quote]Careful — Steam's folder contains a [i]second[/i] folder of the same name. The game is at
+[b]steamapps\common\How to Fish\How to Fish\[/b], not the first one you land in.[/quote]
+
+[b]2.[/b] Launch the game once and quit. This makes BepInEx create its folders.
+
+[b]3.[/b] Drop [b]HowToFish.BossHpText.dll[/b] into:
+
+[code]How to Fish\BepInEx\plugins\[/code]
+
+[b]4.[/b] Launch and fight a boss.
+
+Mod managers work too — the archive mirrors the game folder structure.
+
+[size=4][b]Configuration[/b][/size]
+
+Run the game once, then edit:
+
+[code]How to Fish\BepInEx\config\alexandre.howtofish.bosshptext.cfg[/code]
+
+[list]
+[*][b]Enabled[/b] — turn the numbers off without uninstalling
+[*][b]Format[/b] — default [b]{0}/{1}[/b]. {0} is current HP, {1} is maximum. Try [b]{0} / {1} HP[/b]
+[*][b]FontSize[/b] — points. 0 copies the boss name's size
+[*][b]TextColor[/b] — hex, e.g. [b]#FFE9A0[/b]
+[*][b]OutlineWidth[/b] — 0 to 1. Set 0 for no outline
+[*][b]OutlineColor[/b] — hex
+[/list]
+
+[size=4][b]Multiplayer[/b][/size]
+
+Entirely client-side. The maximum HP is already synced to every client by the game itself, so
+this reads a value that's there anyway and draws it. Nothing is sent, nothing is patched on
+the host.
+
+[b]Players without the mod are completely unaffected.[/b] You can use it in any lobby, and you
+don't need anyone else to install it.
+
+[size=4][b]Compatibility[/b][/size]
+
+Built and tested against [b]Unity 6000.4.4[/b] with BepInEx [b]5.4.23.5[/b].
+
+It touches exactly one method and adds one text object, so it should sit alongside other UI
+mods without trouble. If you already run a pack that displays boss HP beside the bar, you'll
+want one or the other — not both.
+
+[size=4][b]Known behaviour[/b][/size]
+[list]
+[*]The numbers appear on the boss's first damage tick, not the instant the bar fades in
+[*]At around half HP the text sits across the edge of the fill — that's why it's outlined
+[/list]
+
+[size=4][b]Source[/b][/size]
+
+Open source, MIT. Bug reports and pull requests welcome.

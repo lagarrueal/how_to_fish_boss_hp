@@ -1,0 +1,15 @@
+# Game assemblies copied from How to Fish_Data/Managed/.
+# Proprietary — required to build, must never be committed or redistributed.
+lib/
+*.dll
+
+# Build output
+bin/
+obj/
+dist/
+
+# Local Claude Code session settings
+.claude/
+
+# Personal study plan, kept local
+docs/learning-plan.html
