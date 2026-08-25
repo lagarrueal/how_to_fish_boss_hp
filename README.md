@@ -6,7 +6,7 @@ that writes the boss's `current/total` HP inside the boss health bar.
 The game's bar is a normalised fill — it shows you a proportion, never a number. This
 puts the numbers back, centred in the bar, in the game's own font.
 
-![Boss HP text shown in the bar](docs/screenshot.png)
+![The boss bar without and with the mod](docs/nexus-before-after.png)
 
 ## How it works
 
